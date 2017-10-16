@@ -54,15 +54,14 @@ My pipeline consisted of 8 steps:
 ![alt text][image8]
 
 
+---
+
 In order to draw a single line on the left and right lanes, I created a new function called `draw_xavg_lines`. It receives all lines deteced through the
 hough lines algorithm (previous step) and split them in two groups, one with positive and the other with negative line slopes. For each one of this groups
 every line segment that is more than `threshold` standard deviations away from the mean is discarded and the remaining contribute with a set of points that is
 passed to `cv2.lineFit` to get the parameters to the line that best fits all the points. This line is then extrapolated to go from the botton of the image up to
-the top of the ROI, but preserving the fitted slope.
+the top of the ROI, but preserving the fitted slope/intercept.
  
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![alt text][image1]
 
 
 ### 2. Identify potential shortcomings with your current pipeline
