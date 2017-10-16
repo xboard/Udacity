@@ -42,9 +42,16 @@ My pipeline consisted of 8 steps:
 ![alt text][image4]
 
 5. Filtered out everything out of a ROI, region of interest (a trapezoidal region);
+![alt text][image5]
+
 6. Detected the hough lines for each lane;
+![alt text][image6]
+
 7. Filtered out outliers, averaged and extrapolated the rough lines for each lane;
+![alt text][image7]
+
 8. Combined the image with the rough lines with the original image.
+![alt text][image8]
 
 
 In order to draw a single line on the left and right lanes, I created a new function called `draw_xavg_lines`. It receives all lines deteced through the
